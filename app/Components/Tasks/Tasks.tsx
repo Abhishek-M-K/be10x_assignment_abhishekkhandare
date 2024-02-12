@@ -49,7 +49,7 @@ const TaskStyled = styled.main`
   padding: 2rem;
   width: 100%;
   background-color: #fff;
-  border: 2px solid #E3E6ED;
+  border: 2px solid #e3e6ed;
   border-radius: 1rem;
   height: 100%;
 
@@ -67,10 +67,10 @@ const TaskStyled = styled.main`
     height: 3rem;
     border-radius: 50%;
 
-    background-color: ${(props) => props.theme.colorBg};
+    background-color: #fff;
     border: 2px solid ${(props) => props.theme.borderColor2};
     box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
-    color: ${(props) => props.theme.colorGrey2};
+    color: ${(props) => props.theme.colorGreenDark};
     font-size: 1.4rem;
 
     display: flex;
@@ -111,11 +111,11 @@ const TaskStyled = styled.main`
     gap: 0.5rem;
 
     height: 16rem;
-    color: ${(props) => props.theme.colorGrey2};
+    color: #808080;
     font-weight: 600;
     cursor: pointer;
     border-radius: 1rem;
-    border: 3px dashed ${(props) => props.theme.colorGrey5};
+    border: 3px dashed #808080;
     transition: all 0.3s ease;
 
     i {
@@ -124,8 +124,8 @@ const TaskStyled = styled.main`
     }
 
     &:hover {
-      background-color: ${(props) => props.theme.colorGrey5};
-      color: ${(props) => props.theme.colorGrey0};
+      background-color: #e3e6ed;
+      color: #000;
     }
   }
 `;
