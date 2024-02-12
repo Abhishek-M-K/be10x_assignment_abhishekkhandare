@@ -93,7 +93,8 @@ const SidebarStyled = styled.nav<{ collapsed: boolean }>`
   position: relative;
   width: ${(props) => props.theme.sidebarWidth};
   background-color: #fff;
-  border: 2px solid #e3e6ed;
+  box-shadow: ${(props) => props.theme.shadow7};
+  border: 2px solid transparent;
   border-radius: 1rem;
 
   display: flex;
@@ -122,7 +123,7 @@ const SidebarStyled = styled.nav<{ collapsed: boolean }>`
     top: 1.8rem;
 
     border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;    
+    border-bottom-right-radius: 1rem;
   }
 
   .user-btn {
@@ -152,7 +153,6 @@ const SidebarStyled = styled.nav<{ collapsed: boolean }>`
     cursor: pointer;
 
     font-weight: 500;
-    
 
     display: flex;
     align-items: center;
@@ -165,10 +165,10 @@ const SidebarStyled = styled.nav<{ collapsed: boolean }>`
       height: 100%;
       backdrop-filter: blur(10px);
       z-index: 0;
-      background: #e3e6ed;
+      background: #ebf3ff;
       transition: all 0.55s linear;
       border-radius: 1rem;
-      border: 2px solid #e3e6ed;
+      border: 2px solid;
       opacity: 0.2;
     }
 
@@ -228,6 +228,15 @@ const SidebarStyled = styled.nav<{ collapsed: boolean }>`
     cursor: pointer;
     align-items: center;
 
+    &:hover {
+      color: #0165fc;
+
+      a,
+      i {
+        color: #fff !important;
+      }
+    }
+
     &::after {
       position: absolute;
       content: "";
@@ -236,6 +245,7 @@ const SidebarStyled = styled.nav<{ collapsed: boolean }>`
       width: 0;
       height: 100%;
       background-color: #e3e6ed;
+      color: #0165fc;
       z-index: 1;
       transition: all 0.3s ease-in-out;
     }
@@ -265,12 +275,14 @@ const SidebarStyled = styled.nav<{ collapsed: boolean }>`
       display: flex;
       align-items: center;
       color: #0165fc;
+      fill: #0165fc;
     }
 
     &:hover {
       &::after {
         width: 100%;
         color: #0165fc;
+        fill: #0165fc;
       }
     }
   }

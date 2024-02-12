@@ -18,7 +18,7 @@ function Tasks({ title, tasks }: Props) {
   return (
     <TaskStyled theme={theme}>
       {modal && <Modal content={<CreateContent />} />}
-      <h1>{title}</h1>
+      <h1 className=" text-[15px]">{title}</h1>
 
       <button className="btn-rounded" onClick={openModal}>
         {plus}
@@ -48,8 +48,8 @@ const TaskStyled = styled.main`
   position: relative;
   padding: 2rem;
   width: 100%;
-  background-color: #fff;
-  border: 2px solid #e3e6ed;
+  background-color: #EBF3FF;
+  border: 2px solid transparent;
   border-radius: 1rem;
   height: 100%;
 
@@ -88,8 +88,8 @@ const TaskStyled = styled.main`
   }
 
   > h1 {
-    font-size: clamp(1.5rem, 2vw, 2rem);
-    font-weight: 800;
+    font-size: clamp(16px, 2vw, 24px);
+    font-weight: 700;
     position: relative;
 
     &::after {

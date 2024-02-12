@@ -1,3 +1,5 @@
+import {LogOut} from "lucide-react"
+
 export const bars = <i className="fa-solid fa-bars fa-beat"></i>;
 export const arrowLeft = <i className="fa-solid fa-arrow-left fa-beat"></i>;
 
@@ -11,7 +13,7 @@ export const check = <i className="fa-solid fa-check"></i>;
 export const help = <i className="fa-solid fa-circle-info"></i>;
 export const gear = <i className="fa-solid fa-gear"></i>;
 export const login = <i className="fa-solid fa-right-to-bracket"></i>;
-export const logout = <i className="fa-solid fa-right-from-bracket"></i>;
+export const logout = <LogOut className=" fill-[#0165FC]" />;
 export const user = <i className="fa-solid fa-user"></i>;
 export const join = <i className="fa-solid fa-user-plus"></i>;
 export const heart = <i className="fa-solid fa-heart"></i>;

@@ -18,12 +18,12 @@ function TaskItem({ title, description, date, isCompleted, id }: Props) {
   return (
     <TaskItemStyled theme={theme}>
       <h1>{title}</h1>
-      <p>{description}</p>
-      <p className="date">{formatDate(date)}</p>
+      <p className="text-[#808080]">{description}</p>
+      <p className="date text-rose-600">{formatDate(date)}</p>
       <div className="task-footer">
         {isCompleted ? (
           <button
-            className="completed"
+            className="completed text-white"
             onClick={() => {
               const task = {
                 id,
@@ -37,7 +37,7 @@ function TaskItem({ title, description, date, isCompleted, id }: Props) {
           </button>
         ) : (
           <button
-            className="incomplete"
+            className="incomplete text-white"
             onClick={() => {
               const task = {
                 id,
