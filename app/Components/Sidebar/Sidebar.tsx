@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import styled from "styled-components";
-import { useGlobalState } from "@/app/context/globalProvider";
+import { useGlobalState } from "@/app/context/global-provider";
 import Image from "next/image";
 
 import menu from "@/app/utils/menu";
@@ -70,9 +70,10 @@ function Sidebar() {
           );
         })}
       </ul>
-      <div className="sign-out relative m-6">
+      <div className="sign-out text-[#0165FC] relative m-6">
         <Button
           name={"Sign Out"}
+          color={"#0165FC"}
           type={"submit"}
           padding={"0.4rem 0.8rem"}
           borderRad={"0.8rem"}
@@ -91,15 +92,13 @@ function Sidebar() {
 const SidebarStyled = styled.nav<{ collapsed: boolean }>`
   position: relative;
   width: ${(props) => props.theme.sidebarWidth};
-  background-color: ${(props) => props.theme.colorBg2};
-  border: 2px solid ${(props) => props.theme.borderColor2};
+  background-color: #fff;
+  border: 2px solid #e3e6ed;
   border-radius: 1rem;
 
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
-  color: ${(props) => props.theme.colorGrey3};
 
   @media screen and (max-width: 768px) {
     position: fixed;
@@ -123,12 +122,7 @@ const SidebarStyled = styled.nav<{ collapsed: boolean }>`
     top: 1.8rem;
 
     border-top-right-radius: 1rem;
-    border-bottom-right-radius: 1rem;
-
-    background-color: ${(props) => props.theme.colorBg2};
-    border-right: 2px solid ${(props) => props.theme.borderColor2};
-    border-top: 2px solid ${(props) => props.theme.borderColor2};
-    border-bottom: 2px solid ${(props) => props.theme.borderColor2};
+    border-bottom-right-radius: 1rem;    
   }
 
   .user-btn {
@@ -158,7 +152,7 @@ const SidebarStyled = styled.nav<{ collapsed: boolean }>`
     cursor: pointer;
 
     font-weight: 500;
-    color: ${(props) => props.theme.colorGrey0};
+    
 
     display: flex;
     align-items: center;
@@ -171,19 +165,18 @@ const SidebarStyled = styled.nav<{ collapsed: boolean }>`
       height: 100%;
       backdrop-filter: blur(10px);
       z-index: 0;
-      background: ${(props) => props.theme.colorBg3};
+      background: #e3e6ed;
       transition: all 0.55s linear;
       border-radius: 1rem;
-      border: 2px solid ${(props) => props.theme.borderColor2};
-
+      border: 2px solid #e3e6ed;
       opacity: 0.2;
     }
 
     h1 {
-      font-size: 1.2rem;
+      font-size: 20px;
       display: flex;
       flex-direction: column;
-
+      color: #000;
       line-height: 1.4rem;
     }
 
@@ -200,8 +193,8 @@ const SidebarStyled = styled.nav<{ collapsed: boolean }>`
       transition: all 0.5s ease;
       border-radius: 100%;
 
-      width: 70px;
-      height: 70px;
+      width: 50px;
+      height: 50px;
 
       img {
         border-radius: 100%;
@@ -218,7 +211,6 @@ const SidebarStyled = styled.nav<{ collapsed: boolean }>`
     &:hover {
       .profile-overlay {
         opacity: 1;
-        border: 2px solid ${(props) => props.theme.borderColor2};
       }
 
       img {
@@ -231,7 +223,6 @@ const SidebarStyled = styled.nav<{ collapsed: boolean }>`
     position: relative;
     padding: 0.8rem 1rem 0.9rem 2.1rem;
     margin: 0.3rem 0;
-
     display: grid;
     grid-template-columns: 40px 1fr;
     cursor: pointer;
@@ -244,7 +235,7 @@ const SidebarStyled = styled.nav<{ collapsed: boolean }>`
       top: 0;
       width: 0;
       height: 100%;
-      background-color: ${(props) => props.theme.activeNavLinkHover};
+      background-color: #e3e6ed;
       z-index: 1;
       transition: all 0.3s ease-in-out;
     }
@@ -264,6 +255,7 @@ const SidebarStyled = styled.nav<{ collapsed: boolean }>`
 
     a {
       font-weight: 500;
+      color: #0165fc;
       transition: all 0.3s ease-in-out;
       z-index: 2;
       line-height: 0;
@@ -272,31 +264,34 @@ const SidebarStyled = styled.nav<{ collapsed: boolean }>`
     i {
       display: flex;
       align-items: center;
-      color: ${(props) => props.theme.colorIcons};
+      color: #0165fc;
     }
 
     &:hover {
       &::after {
         width: 100%;
+        color: #0165fc;
       }
     }
   }
 
   .active {
-    background-color: ${(props) => props.theme.activeNavLink};
+    background-color: #0165fc;
 
     i,
     a {
-      color: ${(props) => props.theme.colorIcons2};
+      color: #fff !important;
     }
   }
 
   .active::before {
     width: 0.3rem;
+    color: #0165fc;
   }
 
   > button {
     margin: 1.5rem;
+    color: #0165fc;
   }
 `;
 
