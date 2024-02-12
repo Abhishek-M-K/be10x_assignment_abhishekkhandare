@@ -17,10 +17,9 @@
 }
 
 body {
-  background-color: #181818;
+  background: linear-gradient(to right, #fff, #27ae60, #0165fc);
   font-size: 17px;
-  color: #fff;
-
+  color: #0165FC;
   height: 100vh;
 }
 
