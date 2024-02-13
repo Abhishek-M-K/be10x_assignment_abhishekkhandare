@@ -7,6 +7,8 @@ import Sidebar from "./Components/Sidebar/Sidebar";
 import GlobalStyleProvider from "./providers/global-style-provider";
 import ContextProvider from "./providers/context-provider";
 import NextTopLoader from "nextjs-toploader";
+// import { useEffect } from "react";
+// import { useRouter } from "next/navigation";
 
 const nunito = Nunito({
   weight: ["400", "500", "600", "700", "800"],
@@ -23,7 +25,13 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
+  // const router = useRouter();
   const { userId } = auth();
+  // useEffect(() => {
+    // if(!userId) {
+    //   router.push('/signup');
+    // }
+  // }, [userId]);
 
   return (
     <ClerkProvider>
