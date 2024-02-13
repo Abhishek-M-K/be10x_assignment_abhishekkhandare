@@ -1,11 +1,13 @@
 "use client";
 import { useGlobalState } from "@/app/context/global-provider";
-import React from "react";
+import React, { useEffect } from "react";
 import styled from "styled-components";
 import CreateContent from "../Modals/CreateContent";
 import TaskItem from "../TaskItem/TaskItem";
 import { add, plus } from "@/app/utils/icons";
 import Modal from "../Modals/Modal";
+import { useUser } from "@clerk/nextjs";
+import { useRouter } from "next/navigation";
 
 interface Props {
   title: string;
@@ -14,6 +16,16 @@ interface Props {
 
 function Tasks({ title, tasks }: Props) {
   const { theme, isLoading, openModal, modal } = useGlobalState();
+
+  const user = useUser();
+  const router = useRouter();
+
+  useEffect(() => {
+    // Redirect to signup page if user is not signed in
+    if (!user) {
+      router.push("/signup");
+    }
+  }, [user, router]);
 
   return (
     <TaskStyled theme={theme}>
@@ -48,7 +60,7 @@ const TaskStyled = styled.main`
   position: relative;
   padding: 2rem;
   width: 100%;
-  background-color: #EBF3FF;
+  background-color: #ebf3ff;
   border: 2px solid transparent;
   border-radius: 1rem;
   height: 100%;
@@ -61,10 +73,10 @@ const TaskStyled = styled.main`
 
   .btn-rounded {
     position: fixed;
-    top: 4.9rem;
+    top: 4rem;
     right: 5.1rem;
-    width: 3rem;
-    height: 3rem;
+    width: 2.8rem;
+    height: 2.8rem;
     border-radius: 50%;
 
     background-color: #fff;
