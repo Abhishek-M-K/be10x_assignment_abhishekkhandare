@@ -6,8 +6,8 @@ import CreateContent from "../Modals/CreateContent";
 import TaskItem from "../TaskItem/TaskItem";
 import { add, plus } from "@/app/utils/icons";
 import Modal from "../Modals/Modal";
-import { useUser } from "@clerk/nextjs";
-import { useRouter } from "next/navigation";
+// import { useUser } from "@clerk/nextjs";
+// import { useRouter } from "next/navigation";
 
 interface Props {
   title: string;
@@ -17,15 +17,15 @@ interface Props {
 function Tasks({ title, tasks }: Props) {
   const { theme, isLoading, openModal, modal } = useGlobalState();
 
-  const user = useUser();
-  const router = useRouter();
+  //const user = useUser();
+  //const router = useRouter();
 
-  useEffect(() => {
+  /*useEffect(() => {
     // Redirect to signup page if user is not signed in
     if (!user) {
       router.push("/signup");
     }
-  }, [user, router]);
+  }, [user, router]); */
 
   return (
     <TaskStyled theme={theme}>
